@@ -61,12 +61,13 @@ Task 3
 
 Write JavaScript below that changes the background colour of the page when the 'Change colour' button is clicked.
 */
-const changeBackgroundColor = () => document.body.style.backgroundColor = "eee2df"
 
-const backgroundBtn = document.querySelector('#bgrChangeBtn')
-backgroundBtn.addEventListener("click", changeBackgroundColor)
+// const changeBackgroundColor = () => document.body.style.backgroundColor = "eee2df"
 
-//
+// const backgroundBtn = document.querySelector('#bgrChangeBtn')
+// backgroundBtn.addEventListener("click", changeBackgroundColor)
+
+
 
 /*
 Task 4
@@ -76,17 +77,15 @@ When a user clicks the ‘Add some text’ button, a new paragraph should be add
 */
 
 const learnMoreBtn = document.querySelector("#addTextBtn") 
+const outputElement = document.querySelector("#mainArticles") 
 
 const addParagraph = () => {
-    const findElement = document.querySelector("#mainArticles") 
     const paragraph = document.createElement('p')
-    paragraph.innerText = "test"
-    
-    findElement.appendChild(paragraph)
+    paragraph.innerText = "Add some text here"
+    outputElement.appendChild(paragraph)
 }
 
 learnMoreBtn.addEventListener("click", addParagraph)
-
 
 
 /*
@@ -111,8 +110,6 @@ largerLinksButton.addEventListener("click", increaseLinks) // 2
 // 3 find all the links on the page ('a')
 // 4 increase their size
 
-
-
 /*
 Task 6
 ======
@@ -121,6 +118,28 @@ Using the same function in Task 4,
 When the 'Add' button is clicked, get the text inside the input field and create a new paragraph in the "LEARN MORE" section
 Also clear the text inside the input field
 */
+
+ // 1 - find the button add
+ // 2 - find the espace to collect the text (input)
+ // 3 - add the tag it will receive the text of the input
+ // 4 - And specify the place it will receive the 3 task <--- already declared on task 4 - just put as a global variable
+ // 5 - Creates the funcction that receives the input and put in the output 
+ // 6 - and a function to clean the field
+
+
+ const addArticleBtn = document.querySelector("#addArticleBtn") // 1
+ const getInputText = document.querySelector(".form-control") // 2
+ 
+ const addInputText = () => { // <-- 5 - the function
+    const paragraph = document.createElement('p') // 3
+    paragraph.innerText = getInputText.value
+    outputElement.appendChild(paragraph)
+       
+ }
+ addArticleBtn.addEventListener('click', addInputText )
+
+const removeInputField = () =>  getInputText.value = "" // <-- 6 - the second function
+addArticleBtn.addEventListener('click', removeInputField)
 
 /*
 Task 7
@@ -131,3 +150,15 @@ Using the same function in Task 3, every time the 'Change colour' button is clic
 The next color when you are in the last color of the array will be the first color again.
 */
 
+const backgroundBtn = document.querySelector('#bgrChangeBtn')
+const fiveColours = ["fbf8cc","ffcad4", "dfe7fd", "9fa0ff", "dbe7e4"]
+let colourIndex = 0;
+
+const changeBackgroundFiveColours = () => {
+    for (i = 0; i < fiveColours.length; i++) {
+        colourIndex = (colourIndex+1)%fiveColours.length;
+        return document.body.style.backgroundColor = fiveColours[colourIndex];
+    }
+}
+
+backgroundBtn.addEventListener("click", changeBackgroundFiveColours)
