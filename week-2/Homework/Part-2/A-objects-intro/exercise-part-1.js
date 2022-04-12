@@ -29,7 +29,7 @@ const house = {
 }
 
 const personalInfo = {
-    height = 1,65,
+    height = "1,65",
     weight = 72,
     country = "Brazil",
     hobbie = "dance and paint",
@@ -41,9 +41,8 @@ const personalInfo = {
     vacations = "travels",
     kindOfFood: "sweets",
     number: "even",
-    
+  
 }
-
 
 const travel = {
     next = "Portugal",
@@ -59,8 +58,8 @@ const routine = {
     Monday = "CodeBuddy Manana",
     Tuesday = "Terapist Luciana",
     Wednesday = "MigraCode Online",
-    Thursday = "Yoga on the break of work"
-    Friday = "Aero Yoga" ,
+    Thursday = "Yoga on the break of work",
+    Friday = "Aero Yoga",
     Saturday = "MigraCode on CaixaTeam"
 }
 
@@ -70,6 +69,6 @@ const birthDays = {
     Brother = 04/08,
     Niece = 26/05,
     Felix = 15/3,
-    Me = 16/11
-    GrandPa = 09/01,
+    Me = 16/11,
+    GrandPa = 09/01
 }
