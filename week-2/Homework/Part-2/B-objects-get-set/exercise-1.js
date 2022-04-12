@@ -9,4 +9,21 @@ var kitten = {
 };
 
 // YOUR CODE HERE
+console.log(kitten.ageMonths) 
+console.log(kitten.isFemale);
+console.log(kitten.furColour);
+
+// or
+
+console.log(kitten['ageMonths'])
+console.log(kitten['isFemale']);
+console.log(kitten['furColour']);
+
+/* both prints:
+
+3
+true
+brown
+
+*/
 
