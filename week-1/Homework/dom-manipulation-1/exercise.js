@@ -62,10 +62,10 @@ Task 3
 Write JavaScript below that changes the background colour of the page when the 'Change colour' button is clicked.
 */
 
-// const changeBackgroundColor = () => document.body.style.backgroundColor = "eee2df"
+const changeBackgroundColor = () => document.body.style.backgroundColor = "eee2df"
 
-// const backgroundBtn = document.querySelector('#bgrChangeBtn')
-// backgroundBtn.addEventListener("click", changeBackgroundColor)
+const backgroundBtn = document.querySelector('#bgrChangeBtn')
+backgroundBtn.addEventListener("click", changeBackgroundColor)
 
 
 
