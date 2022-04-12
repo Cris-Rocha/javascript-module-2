@@ -6,8 +6,15 @@ Try to think of as many properties as you can!
 
 */
 
-let laptop = {
-    brand: "Lenovo",
+let laptopCris = {
+    brand: "Apple",
     screenSize: 13,
-    isTouchscreen: true,
+    isTouchscreen: false,
+    thereIsCamera: true,
+    weight: "about 3 kilos",
+    color: "grey",
+    isItBig:  false,
+    version: "MacBook Pro"
+
   };
+
