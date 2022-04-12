@@ -42,3 +42,32 @@ const clickGreenBtn = () => {
 }
 
 greenBtn.addEventListener('click', clickGreenBtn)
+
+
+// ## Part 2
+
+const submitBtn = document.querySelector('form button')
+const emailField = document.querySelector("#exampleInputEmail1")
+const yourNameField = document.querySelector('#example-text-input')
+const describeField = document.querySelector('#exampleTextarea')
+
+
+const checkValidFields = (event) => {
+    event.preventDefault()
+    if (emailField.value.length === 0 || emailField.value.trim().includes("@") === false){
+        return emailField.style.backgroundColor = "red" };
+    if (yourNameField.value.length === 0 ) {
+        return yourNameField.style.backgroundColor = "red";}
+    if (describeField.value.length === 0) {
+        return describeField.style.backgroundColor = "red" }
+    else { 
+        yourNameField.style.backgroundColor = "white";
+        describeField.style.backgroundColor = "white";
+        window.alert('Thank you for filling out the form');
+        emailField.value = "";
+        yourNameField.value = "";
+        describeField.value = "";
+    }
+    
+} 
+submitBtn.addEventListener('click', checkValidFields)
