@@ -4,6 +4,10 @@
 
 // WRITE CODE HERE
 
+const kitten = {
+    name:'Gilbert',
+}
+
 
 console.log(kitten.name);
 
