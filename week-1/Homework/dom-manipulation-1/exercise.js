@@ -62,11 +62,10 @@ Task 3
 Write JavaScript below that changes the background colour of the page when the 'Change colour' button is clicked.
 */
 
-const changeBackgroundColor = () => document.body.style.backgroundColor = "eee2df"
+const changeBackgroundColor = (background) => document.body.style.backgroundColor = background
 
 const backgroundBtn = document.querySelector('#bgrChangeBtn')
-backgroundBtn.addEventListener("click", changeBackgroundColor)
-
+backgroundBtn.addEventListener("click", () => changeBackgroundColor("eee2df"))
 
 
 /*
@@ -79,13 +78,13 @@ When a user clicks the ‘Add some text’ button, a new paragraph should be add
 const learnMoreBtn = document.querySelector("#addTextBtn") 
 const outputElement = document.querySelector("#mainArticles") 
 
-const addParagraph = () => {
+const addParagraph = (text) => {
     const paragraph = document.createElement('p')
-    paragraph.innerText = "Add some text here"
+    paragraph.innerText = text
     outputElement.appendChild(paragraph)
 }
 
-learnMoreBtn.addEventListener("click", addParagraph)
+learnMoreBtn.addEventListener("click",() => addParagraph("Add your text here")) // adding a function that calls a function
 
 
 /*
@@ -95,13 +94,14 @@ Task 5
 ENG -When the 'Larger links!' button is clicked, the text of all links on the page should increase. 
 SPAN -Cuando el mensaje '¡Enlaces más grandes!' se hace clic en el botón, el texto de todos los enlaces en la página debería aumentar.
 POR -Quando o 'Links maiores!' botão for clicado, o texto de todos os links da página deverá aumentar.
+
 */
 
 const largerLinksButton = document.querySelector("#largerLinksBtn") // 1
 
 const increaseLinks = () => {
     const allLinks = document.querySelectorAll('a'); //3
-    allLinks.forEach(link => {link.style.fontSize = 'x-large'}) //4 
+    allLinks.forEach(link => link.style.fontSize = '20px') //4 
 }
 largerLinksButton.addEventListener("click", increaseLinks) // 2
 
@@ -131,15 +131,13 @@ Also clear the text inside the input field
  const getInputText = document.querySelector(".form-control") // 2
  
  const addInputText = () => { // <-- 5 - the function
-    const paragraph = document.createElement('p') // 3
-    paragraph.innerText = getInputText.value
-    outputElement.appendChild(paragraph)
+
+    addParagraph(getInputText.value)
+    getInputText.value = ""
        
  }
  addArticleBtn.addEventListener('click', addInputText )
 
-const removeInputField = () =>  getInputText.value = "" // <-- 6 - the second function
-addArticleBtn.addEventListener('click', removeInputField)
 
 /*
 Task 7
@@ -150,15 +148,18 @@ Using the same function in Task 3, every time the 'Change colour' button is clic
 The next color when you are in the last color of the array will be the first color again.
 */
 
-const backgroundBtn = document.querySelector('#bgrChangeBtn')
 const fiveColours = ["fbf8cc","ffcad4", "dfe7fd", "9fa0ff", "dbe7e4"]
 let colourIndex = 0;
 
 const changeBackgroundFiveColours = () => {
-    for (i = 0; i < fiveColours.length; i++) {
-        colourIndex = (colourIndex+1)%fiveColours.length;
-        return document.body.style.backgroundColor = fiveColours[colourIndex];
+   
+    if (colourIndex >= fiveColours.length ) {
+        colourIndex = 0
     }
+    // document.body.style.backgroundColor = fiveColours[colourIndex];
+    changeBackgroundColor(fiveColours[colourIndex])
+    colourIndex++
 }
 
 backgroundBtn.addEventListener("click", changeBackgroundFiveColours)
+
