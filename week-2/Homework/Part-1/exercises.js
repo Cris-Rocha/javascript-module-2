@@ -15,7 +15,20 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+
+  let h1 = document.createElement('h1');// aqui creamos una variable para la etiqueta H1
+  h1.innerText = "Hola" // aqui anadimos la informacion que queremos en el H1 atraves de la H1
+
+  console.log(h1); // probando que sale del content prints <h1>Hola</h1> 
+
+  let h2 = document.createElement('h2'); // aqui creamos la segunda variable para la etiqueta H2
+  h2.innerText = "Good-Bye" // anadi la segunda informacion 
+
 }
+
+
+
+
 
 /**
  *
